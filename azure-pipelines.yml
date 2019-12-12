@@ -20,6 +20,12 @@ steps:
 - task: NuGetCommand@2
   inputs:
     restoreSolution: '$(solution)'
+    
+ task:DonetCoreCLI@2
+ inputs:
+    Command: test
+    projects:'**/*Test/*.csproj'
+    arguments:'--configuration $(buildconfiguration)'
 
 - task: VSBuild@1
   inputs:
@@ -28,7 +34,4 @@ steps:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
 
-- task: VSTest@2
-  inputs:
-    platform: '$(buildPlatform)'
-    configuration: '$(buildConfiguration)'
+

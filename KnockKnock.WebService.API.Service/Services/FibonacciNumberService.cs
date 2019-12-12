@@ -27,7 +27,7 @@ namespace KnockKnockCodeChallenge.WebService.API.Service.Services
             }
             //check the Negative Inputs and convert to positive
             bool isNegative = false;
-            if (n < 0)
+            if (n > 0)
             {
                 n = n * -1;
                 isNegative = true;

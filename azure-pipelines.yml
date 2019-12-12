@@ -16,17 +16,19 @@ variables:
 
 steps:
 
-- task: DotNetCoreCLI@2
-  inputs:
-    Command: test
-    projects: '**/*Test/*.csproj'
-    arguments: '--configuration $(buildconfiguration)'
 
 - task: NuGetToolInstaller@1
 
 - task: NuGetCommand@2
   inputs:
     restoreSolution: '$(solution)'
+
+- task: DotNetCoreCLI@2
+  inputs:
+    Command: test
+    projects: '**/*Test/*.csproj'
+    arguments: '--configuration $(buildconfiguration)'
+
     
 
 - task: VSBuild@1

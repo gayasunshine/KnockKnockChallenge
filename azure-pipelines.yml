@@ -39,8 +39,7 @@ steps:
     arguments: '--configuration $(buildconfiguration) --output $(Build.ArtifactsStagingDirectory)'
     zipAfterPublish: true
     
-- task: PublishBuildArtifacts@1
-  displayName: 'Publish Artifacts'
+
     
 
 - task: VSBuild@1
@@ -49,5 +48,8 @@ steps:
     msbuildArgs: '/p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:DesktopBuildPackageLocation="$(build.artifactStagingDirectory)\WebApp.zip" /p:DeployIisAppPath="Default Web Site"'
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
+    
+- task: PublishBuildArtifacts@1
+  displayName: 'Publish Artifacts'
 
 

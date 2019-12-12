@@ -25,7 +25,7 @@ namespace KnockKnockCodeChallenge.WebService.API.Service.Services
 
                 });
             }
-            //check the Negative Inputs and convert to positive
+            //check the Negative Inputs and convert to positives
             bool isNegative = false;
             if (n < 0)
             {

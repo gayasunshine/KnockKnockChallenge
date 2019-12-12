@@ -21,7 +21,7 @@ steps:
   inputs:
     restoreSolution: '$(solution)'
     
- task:DonetCoreCLI@2
+ task:DotnetCoreCLI@2
  inputs:
     Command: test
     projects:'**/*Test/*.csproj'

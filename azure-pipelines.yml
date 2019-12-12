@@ -35,7 +35,7 @@ steps:
   inputs:
     Command: publish
     publishWebProjects: false
-    projects: 'KnockKnockCodeChallenge.WebService.API/KnockKnockCodeChallenge.WebService.API.csproj,KnockKnock.WebService.API.Service/KnockKnock.WebService.API.Service.csproj'
+    projects: 'KnockKnockCodeChallenge.WebService.API/KnockKnockCodeChallenge.WebService.API.csproj'
     arguments: '--configuration $(buildconfiguration) --output $(Build.ArtifactsStagingDirectory)'
     zipAfterPublish: true
     

@@ -10,7 +10,7 @@ namespace KnockKnockCodeChallenge.WebService.API.Service.Services
         protected readonly long threshold = 92;
         public long GetFibonacciNumber(long n)
         {
-            long firstNumber = 0, secondNumber = 1, result = 0;
+           // long firstNumber = 0, secondNumber = 1, result = 0;
             if (n > threshold)
             {
                 throw new HttpResponseException(new HttpResponseMessage(HttpStatusCode.BadRequest)
@@ -27,7 +27,7 @@ namespace KnockKnockCodeChallenge.WebService.API.Service.Services
             }
             //check the Negative Inputs and convert to positive
             bool isNegative = false;
-            if (n < 0)
+            if (n > 0)
             {
                 n = n * -1;
                 isNegative = true;

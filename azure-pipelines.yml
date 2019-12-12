@@ -28,7 +28,19 @@ steps:
     Command: test
     projects: '**/*Test/*.csproj'
     arguments: '--configuration $(buildconfiguration)'
+    
 
+- task: DotNetCoreCLI@2
+  displayName: 'dotnet publish --configuration $(buildconfiguration) --output $(Build.ArtifactsStagingDirectory'
+  inputs:
+    Command: publish
+    publishWebProjects: false
+    projects: KnockKnockCodeChallenge.WebService.API/KnockKnockCodeChallenge.WebService.API.csproj
+    arguments: '--configuration $(buildconfiguration) --output $(Build.ArtifactsStagingDirectory'
+    zipAfterPublish: true
+    
+- task: PublishBuildArtifacts@1
+  displayName: 'Publish Artifacts'
     
 
 - task: VSBuild@1
